@@ -4,7 +4,7 @@ from flask import make_response
 from flask import request
 from conn_calendar import Connector
 
-
+con = Connector()
 app = Flask(__name__)
 
 
@@ -37,28 +37,31 @@ def create_task():
 
 #contenuto del paramentro post: un json contente le informazioni dell'evento
 @app.route('/ippocrate/calendar/v1.0/new_event/', methods=['POST'])
-def create_task():
-    Connector()
+def create_reservation():
 
     if not request.json or not 'ospedale' in request.json:
         abort(400)
     print("faccio la creazione")    #facile a dirsi
+    id_google = con.create_reservation(request.json)
     response = {
         'code': '201',
-        'message': 'Evento creato correttamente'
+        'id': id_google
     }
     return jsonify(response), 201
 
 @app.route('/ippocrate/calendar/v1.0/delete_event/', methods=['POST'])
-def delete_event():
+def delete_reservation():
 
     if not request.json or not 'ospedale' in request.json:
         abort(400)
     print("faccio al cancellazione")
+    con
+
     response = {
         'code': '201',
-        'message': 'evento cancellato correttamente'
+        'id': 'evento cancellato correttamente'
     }
+
     return jsonify(response), 201
 
 @app.route('/ippocrate/calendar/v1.0/check_slot/', methods=['POST'])
