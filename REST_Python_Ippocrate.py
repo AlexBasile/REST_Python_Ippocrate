@@ -7,34 +7,6 @@ from conn_calendar import Connector
 con = Connector()
 app = Flask(__name__)
 
-
-"""
-calendari = [
-    {
-        'maria vittoria': {
-            'radiologia': u'id calendario',
-            'cardiologia': u'id calenda'
-        }
-    }
-
-]
-"""
-"""
-@app.route('/todo/api/v1.0/tasks', methods=['PUT'])
-def create_task():
-    if not request.json or not 'title' in request.json:
-        abort(400)
-    task = {
-        'id': tasks[-1]['id'] + 1,
-        'title': request.json['title'],
-        'description': request.json.get('description', ""),
-        'done': False
-    }
-    tasks.append(task)
-    return jsonify({'task': task}), 201
-"""
-
-
 #contenuto del paramentro post: un json contente le informazioni dell'evento
 @app.route('/ippocrate/calendar/v1.0/new_event/', methods=['POST'])
 def create_reservation():
@@ -55,8 +27,7 @@ def delete_reservation():
     if not request.json or not 'ospedale' in request.json:
         abort(400)
     print("faccio al cancellazione")
-    con
-
+    con.delete_reservation(request.json)
     response = {
         'code': '201',
         'id': 'evento cancellato correttamente'

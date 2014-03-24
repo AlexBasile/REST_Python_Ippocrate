@@ -52,7 +52,7 @@ class Connector:
     def create_reservation(self, request):
         event = {
             'summary': request['prenotazione'],
-            'location': request['ospedale'],
+            'location': request['struttura'],
             'start': {
                 'dateTime': request['start']
             },
@@ -61,7 +61,7 @@ class Connector:
             }
         }
 
-        id_c = filter(lambda t: t['struttura'] == request['ospedale'], calendars)[0][request['sala']]
+        id_c = filter(lambda t: t['struttura'] == request['struttura'], calendars)[0][request['id_prestazione']]
         #creo evento e ritorno l'ID per le successive modifiche
         event_c = service_calendar.events().insert(calendarId=id_c, body=event).execute()
         return event_c['id']
@@ -69,9 +69,7 @@ class Connector:
     def delete_reservation(self, request):
         id_c = filter(lambda t: t['struttura'] == request['ospedale'], calendars)[0][request['sala']]
         event_id = request['id_google']
-        service_calendar.events().delete(calendarId=id_c, eventId=event_id).
-
-
+        service_calendar.events().delete(calendarId=id_c, eventId=event_id).execute()
 
     def modify_reservation(self):
         return 0
