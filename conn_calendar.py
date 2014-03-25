@@ -69,7 +69,7 @@ class Connector:
     def delete_reservation(self, request):
         id_c = filter(lambda t: t['struttura'] == request['ospedale'], calendars)[0][request['sala']]
         event_id = request['id_google']
-        service_calendar.events().delete(calendarId=id_c, eventId=event_id).
+        service_calendar.events().delete(calendarId=id_c, eventId=event_id).execute()
 
 
 
@@ -78,11 +78,20 @@ class Connector:
     def check_slot(self):
         return 0
 
-    def free_slot(self):
-        freebusy_query = {
-            #"timeMin" : time_min,
-            #"timeMax" : time_max,
+    def free_slot(self,request):
+        id_c = filter(lambda t: t['struttura'] == request['ospedale'], calendars)[0][request['sala']]
 
+        freebusy_query = {
+            "timeMin" : request['time_min'],
+            "timeMax" : request['time_max'],
+            "items" :[
+              {
+                "id" : id_c
+              }
+            ]
         }
+
+        response = service_calendar.freebusy().query(body=freebusy_query);
+        return response
 
 
