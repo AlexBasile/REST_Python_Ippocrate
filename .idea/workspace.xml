@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6781188e-a92b-4eeb-b940-754a100c1cbf" name="Default" comment="" />
+    <list default="true" id="6781188e-a92b-4eeb-b940-754a100c1cbf" name="Default" comment="inizio di create_calendars">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/REST_Python_Ippocrate.iml" afterPath="$PROJECT_DIR$/.idea/REST_Python_Ippocrate.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="REST_Python_Ippocrate.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,9 +17,9 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/REST_Python_Ippocrate$calendar.coverage" NAME="calendar Coverage Results" MODIFIED="1395590703096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/REST_Python_Ippocrate$conn_calendar.coverage" NAME="conn_calendar Coverage Results" MODIFIED="1395590996611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/REST_Python_Ippocrate$REST_Python_Ippocrate.coverage" NAME="REST_Python_Ippocrate Coverage Results" MODIFIED="1395591730961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/REST_Python_Ippocrate$calendar.coverage" NAME="calendar Coverage Results" MODIFIED="1395590703096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -28,21 +33,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="REST_Python_Ippocrate.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="REST_Python_Ippocrate.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/REST_Python_Ippocrate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="0" selection-start="912" selection-end="912" vertical-scroll-proportion="1.23" vertical-offset="0" max-vertical-offset="1725">
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state line="57" column="0" selection-start="1422" selection-end="1422" vertical-scroll-proportion="0.0" vertical-offset="754" max-vertical-offset="1710">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conn_calendar.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="conn_calendar.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/conn_calendar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="25" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="720">
+            <state line="83" column="0" selection-start="2805" selection-end="2805" vertical-scroll-proportion="0.58478606" vertical-offset="876" max-vertical-offset="1830">
               <folding>
                 <element signature="e#21#30#0" expanded="true" />
               </folding>
@@ -57,23 +60,31 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myStructureFilterPaths" />
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/calendar.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/httplib2/__init__.py" />
-        <option value="$PROJECT_DIR$/conn_calendar.py" />
         <option value="$PROJECT_DIR$/REST_Python_Ippocrate.py" />
+        <option value="$PROJECT_DIR$/conn_calendar.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
-    <option name="width" value="1440" />
-    <option name="height" value="874" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -123,11 +134,20 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="/usr/local/Cellar/python/2.7.6/Frameworks/Python.framework/Versions/2.7/bin/python2.7" />
+    <property name="FullScreen" value="true" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <PyConsoleSettings />
+    </option>
   </component>
   <component name="RunManager" selected="Python.REST_Python_Ippocrate">
     <configuration default="false" name="conn_calendar" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -349,29 +369,76 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="6781188e-a92b-4eeb-b940-754a100c1cbf" name="Default" comment="" />
       <created>1395166057967</created>
       <updated>1395166057967</updated>
     </task>
+    <task id="LOCAL-00001" summary="tentativo di freebusy">
+      <created>1395746122588</created>
+      <updated>1395746122588</updated>
+    </task>
+    <task id="LOCAL-00002" summary="inizio di create_calendars">
+      <created>1396192492902</created>
+      <updated>1396192492902</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="874" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32892057" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32804233" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27805486" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15566714" sideWeight="0.6984127" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17235859" sideWeight="0.67107946" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3015873" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27805486" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30108827" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -388,17 +455,43 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="tentativo di freebusy" />
+    <MESSAGE value="inizio di create_calendars" />
+    <option name="LAST_COMMIT_MESSAGE" value="inizio di create_calendars" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/conn_calendar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="33" selection-start="2607" selection-end="2607" vertical-scroll-proportion="0.0" vertical-offset="1125" max-vertical-offset="1290">
+          <folding>
+            <element signature="e#21#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/REST_Python_Ippocrate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="921" selection-end="921" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1770">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conn_calendar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="25" selection-start="1090" selection-end="1090" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1410">
+          <folding>
+            <element signature="e#21#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/REST_Python_Ippocrate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="4" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1680">
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -413,7 +506,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/httplib2/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="11" selection-start="895" selection-end="899" vertical-scroll-proportion="0.0" vertical-offset="333" max-vertical-offset="24945">
+        <state line="41" column="11" selection-start="895" selection-end="899" vertical-scroll-proportion="0.0" vertical-offset="333" max-vertical-offset="24945" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/REST_Python_Ippocrate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="4" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1680">
           <folding />
         </state>
       </provider>
@@ -421,87 +519,62 @@
     <entry file="file://$PROJECT_DIR$/REST_Python_Ippocrate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="4" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1680">
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/REST_Python_Ippocrate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="4" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1680">
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REST_Python_Ippocrate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="4" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1680">
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/REST_Python_Ippocrate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="39" selection-start="825" selection-end="825" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1155">
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/REST_Python_Ippocrate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="70" column="13" selection-start="1551" selection-end="1700" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="1155">
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/REST_Python_Ippocrate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="70" column="13" selection-start="1551" selection-end="1700" vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="1155">
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/REST_Python_Ippocrate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="0" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="855">
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/httplib2/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="11" selection-start="899" selection-end="899" vertical-scroll-proportion="0.3944056" vertical-offset="333" max-vertical-offset="24945">
+        <state line="41" column="11" selection-start="899" selection-end="899" vertical-scroll-proportion="0.3944056" vertical-offset="333" max-vertical-offset="24945" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/REST_Python_Ippocrate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="0" selection-start="1422" selection-end="1422" vertical-scroll-proportion="0.0" vertical-offset="754" max-vertical-offset="1710">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/conn_calendar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="25" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="720">
+        <state line="83" column="0" selection-start="2805" selection-end="2805" vertical-scroll-proportion="0.58478606" vertical-offset="876" max-vertical-offset="1830">
           <folding>
             <element signature="e#21#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REST_Python_Ippocrate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="912" selection-end="912" vertical-scroll-proportion="1.23" vertical-offset="0" max-vertical-offset="1725">
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
