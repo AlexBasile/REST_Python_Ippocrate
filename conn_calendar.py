@@ -75,6 +75,7 @@ class Connector:
 
     def modify_reservation(self):
         return 0
+
     def check_slot(self):
         return 0
 
@@ -94,4 +95,22 @@ class Connector:
         response = service_calendar.freebusy().query(body=freebusy_query);
         return response
 
+    def create_calendars(self,request):
+        page_token = None
+        while True:
+          calendar_list = service_calendar.calendarList().list(pageToken=page_token).execute()
+          for calendar_list_entry in calendar_list['items']:
+            service_calendar.calendars().delete(calendar_list_entry['id']).execute()
+
+          page_token = calendar_list.get('nextPageToken')
+          if not page_token:
+            break
+
+
+
+        structures = request['strutture'];
+
+
+
+        structures
 

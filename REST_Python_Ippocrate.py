@@ -55,7 +55,7 @@ def delete_reservation():
     if not request.json or not 'ospedale' in request.json:
         abort(400)
     print("faccio al cancellazione")
-    con
+
 
     response = {
         'code': '201',
