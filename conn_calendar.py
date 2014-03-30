@@ -79,7 +79,7 @@ class Connector:
     def check_slot(self):
         return 0
 
-    def free_slot(self,request):
+    def free_slot(self, request):
         id_c = filter(lambda t: t['struttura'] == request['ospedale'], calendars)[0][request['sala']]
 
         freebusy_query = {
@@ -92,25 +92,67 @@ class Connector:
             ]
         }
 
-        response = service_calendar.freebusy().query(body=freebusy_query);
+        response = service_calendar.freebusy().query(body=freebusy_query)
         return response
 
-    def create_calendars(self,request):
+    def create_calendars(self, request):
+
+        print "inizio cancellazione"
+
         page_token = None
         while True:
-          calendar_list = service_calendar.calendarList().list(pageToken=page_token).execute()
-          for calendar_list_entry in calendar_list['items']:
-            service_calendar.calendars().delete(calendar_list_entry['id']).execute()
+            #Cancello tutti i calendari di tutte le strttureMediche/Sale/Medici
+            calendar_list = service_calendar.calendarList().list(pageToken=page_token).execute()
 
-          page_token = calendar_list.get('nextPageToken')
-          if not page_token:
-            break
+            print calendar_list
 
+            for calendar_list_entry in calendar_list['items']:
+                service_calendar.calendarList().delete(calendarId=calendar_list_entry['id']).execute()
 
+            print "page_token"
+            page_token = calendar_list.get('nextPageToken')
+            print "while"
 
-        structures = request['strutture'];
+            if not page_token:
+                break
 
+        print "finisco la cancellazione"
 
+        #Elimino il vecchio calendari.json
+        os.remove(os.path.join(os.path.dirname(__file__), 'calendari.json'))
 
-        structures
+        calendari = '{ "calendari" = ['
 
+        structures = request['strutture']
+        #per ciascuna struttura
+        for struct in structures:
+
+            calendari += '{ "struttura": "' + struct['nome'] + '",'
+            calendari += '"entita_prenotabili" : [{'
+
+            for medico in struct['medici']:
+                calendar = {
+                    'summary' : 'calendario medico ' + medico,
+                    'timeZone' : 'Europe/Rome'
+                }
+                calendar_id = service_calendar.calendars().insert(body=calendar).execute()
+                calendari += '"' + medico + '": "' + calendar_id + '",'
+
+            for sala in struct['sale']:
+                calendar = {
+                    'summary' : 'calendario sala ' + sala,
+                    'timeZone' : 'Europe/Rome'
+                }
+                calendar_id = service_calendar.calendars().insert(body=calendar).execute()
+                calendari += '"' + sala + '": "' + calendar_id + '",'
+
+            #tolgo la virgola all'ultimo elemento delle entita' prenotabile
+            calendari = calendari[:-1]
+            calendari += '},'
+
+        calendari = calendari[:-1]
+        calendari += "]}"
+        print calendari
+
+        with open('calendari.json.', 'w') as outfile:
+            json.dump(calendari, outfile)

@@ -55,8 +55,7 @@ def delete_reservation():
     if not request.json or not 'ospedale' in request.json:
         abort(400)
     print("faccio al cancellazione")
-    con
-
+    con.delete_reservation(request)
     response = {
         'code': '201',
         'id': 'evento cancellato correttamente'
@@ -102,7 +101,17 @@ def slots_free():
     }
     return jsonify(response), 201
 
+@app.route('/ippocrate/calendar/v1.0/create_calendars/', methods=['POST'])
+def create_calendars():
 
+    if not request.json or not 'strutture' in request.json:
+        abort(400)
+    con.create_calendars(request)
+    response = {
+        'code': '200',
+        'messaggio': 'sticazzi'
+    }
+    return jsonify(response), 201
 
 @app.errorhandler(404)
 def not_found(error):
