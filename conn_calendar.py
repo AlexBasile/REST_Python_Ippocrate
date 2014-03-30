@@ -52,7 +52,7 @@ class Connector:
     def create_reservation(self, request):
         event = {
             'summary': request['prenotazione'],
-            'location': request['struttura'],
+            'location': request['ospedale'],
             'start': {
                 'dateTime': request['start']
             },
@@ -61,7 +61,7 @@ class Connector:
             }
         }
 
-        id_c = filter(lambda t: t['struttura'] == request['struttura'], calendars)[0][request['id_prestazione']]
+        id_c = filter(lambda t: t['struttura'] == request['ospedale'], calendars)[0][request['sala']]
         #creo evento e ritorno l'ID per le successive modifiche
         event_c = service_calendar.events().insert(calendarId=id_c, body=event).execute()
         return event_c['id']
@@ -71,16 +71,46 @@ class Connector:
         event_id = request['id_google']
         service_calendar.events().delete(calendarId=id_c, eventId=event_id).execute()
 
+
+
     def modify_reservation(self):
         return 0
+
     def check_slot(self):
         return 0
 
-    def free_slot(self):
-        freebusy_query = {
-            #"timeMin" : time_min,
-            #"timeMax" : time_max,
+    def free_slot(self,request):
+        id_c = filter(lambda t: t['struttura'] == request['ospedale'], calendars)[0][request['sala']]
 
+        freebusy_query = {
+            "timeMin" : request['time_min'],
+            "timeMax" : request['time_max'],
+            "items" :[
+              {
+                "id" : id_c
+              }
+            ]
         }
 
+        response = service_calendar.freebusy().query(body=freebusy_query);
+        return response
+
+    def create_calendars(self,request):
+        page_token = None
+        while True:
+          calendar_list = service_calendar.calendarList().list(pageToken=page_token).execute()
+          for calendar_list_entry in calendar_list['items']:
+            service_calendar.calendars().delete(calendar_list_entry['id']).execute()
+
+          page_token = calendar_list.get('nextPageToken')
+          if not page_token:
+            break
+
+
+
+        structures = request['strutture'];
+
+
+
+        structures
 
