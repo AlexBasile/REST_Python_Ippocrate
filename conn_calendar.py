@@ -119,7 +119,7 @@ class Connector:
         print "finisco la cancellazione"
 
         #Elimino il vecchio calendari.json
-        os.remove(os.path.join(os.path.dirname(__file__), 'calendari.json'))
+        #os.remove(os.path.join(os.path.dirname(__file__), 'calendari.json'))
 
         calendari = '{ "calendari" = ['
 
