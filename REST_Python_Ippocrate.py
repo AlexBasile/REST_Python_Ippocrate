@@ -3,6 +3,8 @@ from flask import abort
 from flask import make_response
 from flask import request
 from conn_calendar import Connector
+from time import sleep
+
 
 con = Connector()
 app = Flask(__name__)
@@ -39,9 +41,10 @@ def create_task():
 @app.route('/ippocrate/calendar/v1.0/new_event/', methods=['POST'])
 def create_reservation():
 
-    if not request.json or not 'ospedale' in request.json:
+    if not request.json or not 'struttura' in request.json:
         abort(400)
     print("faccio la creazione")    #facile a dirsi
+    print request.json
     id_google = con.create_reservation(request.json)
     response = {
         'code': '201',
@@ -52,7 +55,7 @@ def create_reservation():
 @app.route('/ippocrate/calendar/v1.0/delete_event/', methods=['POST'])
 def delete_reservation():
 
-    if not request.json or not 'ospedale' in request.json:
+    if not request.json or not 'struttura' in request.json:
         abort(400)
     print("faccio al cancellazione")
     con.delete_reservation(request)
@@ -66,7 +69,7 @@ def delete_reservation():
 @app.route('/ippocrate/calendar/v1.0/check_slot/', methods=['POST'])
 def check_slot():
 
-    if not request.json or not 'ospedale' in request.json:
+    if not request.json or not 'struttura' in request.json:
         abort(400)
     print("faccio il check")
     response = {
@@ -101,21 +104,27 @@ def slots_free():
     }
     return jsonify(response), 201
 
-@app.route('/ippocrate/calendar/v1.0/create_calendars/', methods=['POST'])
-def create_calendars():
+@app.route('/ippocrate/calendar/v1.0/get_calendar/', methods=['POST'])
+def get_calendar():
 
-    if not request.json or not 'strutture' in request.json:
+    if not request.json or not 'struttura' in request.json:
         abort(400)
-    con.create_calendars(request)
+    id = con.get_calendar_id(request.json)
     response = {
-        'code': '200',
-        'messaggio': 'sticazzi'
+        'code': '201',
+        'messaggio': id
     }
     return jsonify(response), 201
 
 @app.errorhandler(404)
 def not_found(error):
+    print error
     return make_response(jsonify({'error': 'Not found'}), 404)
+
+@app.errorhandler(500)
+def internal_server_error(error):
+    print error
+    return make_response(jsonify({'error': 'Internal Server Error'}), 500)
 
 if __name__ == '__main__':
     app.run()
