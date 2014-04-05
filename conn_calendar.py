@@ -101,7 +101,7 @@ class Connector:
 
         page_token = None
         while True:
-            #Cancello tutti i calendari di tutte le strttureMediche/Sale/Medici
+            #Cancello tutti i calendari di tutte le struttureMediche/Sale/Medici
             calendar_list = service_calendar.calendarList().list(pageToken=page_token).execute()
 
             print calendar_list
