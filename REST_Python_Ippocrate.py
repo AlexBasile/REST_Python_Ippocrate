@@ -112,7 +112,7 @@ def get_calendar():
     id = con.get_calendar_id(request.json)
     response = {
         'code': '201',
-        'messaggio': id
+        'id': id
     }
     return jsonify(response), 201
 
