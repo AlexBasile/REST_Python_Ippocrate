@@ -41,7 +41,7 @@ class Connector:
     def create_reservation(self, request):
 
         event = {
-            'summary': request['prenotazione'],
+            'summary':  request['id_prestazione'],
             'location': request['struttura'],
             'start': {
                 'dateTime': request['start']
