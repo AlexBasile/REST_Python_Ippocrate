@@ -78,29 +78,23 @@ def check_slot():
     }
     return jsonify(response), 201
 
-@app.route('/ippocrate/calendar/v1.0/slots_free/', methods=['POST'])
+@app.route('/ippocrate/calendar/v1.0/is_slot_free/', methods=['POST'])
 def slots_free():
 
-    if not request.json or not 'ospedale' in request.json:
+    if not request.json or not 'struttura' in request.json:
         abort(400)
 
     print(request.json)
+    ris = con.free_slot(request.json)
+    if ris:
+        code = '201'
+        messaggio = 'orario libero'
+    else:
+        code = '403'
+        messaggio = 'slot selezionato occupato'
     response = {
-        'code': '200',
-        'slots': [
-            {
-                'start': "123",
-                'end': "456"
-            },
-            {
-                'start': "097",
-                'end': "098"
-            },
-            {
-                'start': "099",
-                'end': "100"
-            }
-        ]
+        'code': code,
+        'id': messaggio
     }
     return jsonify(response), 201
 
@@ -115,8 +109,6 @@ def get_calendar():
         'id': id
     }
     return jsonify(response), 201
-
-
 
 @app.errorhandler(404)
 def not_found(error):

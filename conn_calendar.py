@@ -41,7 +41,7 @@ class Connector:
     def create_reservation(self, request):
 
         event = {
-            'summary':  request['id_prestazione'],
+            'summary': str(request['prenotazione']) + " - " + request['id_prestazione'],
             'location': request['struttura'],
             'start': {
                 'dateTime': request['start']
@@ -73,20 +73,28 @@ class Connector:
         return 0
 
     def free_slot(self, request):
+        risp = True
         id_c = filter(lambda t: t['struttura'] == request['struttura'], calendars)[0][request['id_prestazione']]
 
         freebusy_query = {
-            "timeMin" : request['time_min'],
-            "timeMax" : request['time_max'],
-            "items" :[
-              {
-                "id" : id_c
-              }
+            "timeMin": request['start'],
+            "timeMax": request['end'],
+            "timeZone": "02:00",
+            "items": [
+            {
+                "id": id_c
+            }
             ]
         }
 
-        response = service_calendar.freebusy().query(body=freebusy_query)
-        return response
+        response = service_calendar.freebusy().query(body=freebusy_query).execute()
+        print response
+        #controllo che l'array degli orari occupati sia > 0 in caso ci siano altre prenotazioni
+        if len(response['calendars'][id_c]['busy']) > 0:
+            print response['calendars'][id_c]['busy']
+            risp = False
+
+        return risp
 
     def get_calendar_id(self, request):
 
