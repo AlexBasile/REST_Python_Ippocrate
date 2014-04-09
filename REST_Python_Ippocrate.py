@@ -58,7 +58,7 @@ def delete_reservation():
     if not request.json or not 'struttura' in request.json:
         abort(400)
     print("faccio al cancellazione")
-    con.delete_reservation(request)
+    con.delete_reservation(request.json)
     response = {
         'code': '201',
         'id': 'evento cancellato correttamente'
@@ -115,6 +115,8 @@ def get_calendar():
         'id': id
     }
     return jsonify(response), 201
+
+
 
 @app.errorhandler(404)
 def not_found(error):
